@@ -2,6 +2,9 @@ import Foundation
 
 public struct RegularExpression: Hashable {
 
+	/// These constants define the regular expression options.
+	///
+	/// These constants are used by the property `options` and `init(pattern:options:)`.
 	public struct Options: OptionSet {
 
 		public var rawValue: UInt
@@ -42,6 +45,10 @@ public struct RegularExpression: Hashable {
 
 	}
 
+	/// The matching options constants specify the reporting, completion and matching rules to the
+	/// expression matching methods.
+	///
+	/// These constants are used by all methods that search for, or replace values, using a regular expression.
 	public struct MatchingOptions: OptionSet {
 
 		public var rawValue: UInt
@@ -91,6 +98,9 @@ public struct RegularExpression: Hashable {
 
 	}
 
+	/// Set by the Block as the matching progresses, completes, or fails.
+	///
+	/// Used by the method `enumerateMatches(in:options:range:using:)`.
 	public struct MatchingFlags: OptionSet {
 
 		public var rawValue: UInt
@@ -159,6 +169,9 @@ public struct RegularExpression: Hashable {
 			return RegularExpression(textCheckingResult.regularExpression!)
 		}
 
+		/// Returns a match after adjusting the ranges as specified by the offset.
+		/// - Parameter offset: The amount the ranges are adjusted.
+		/// - Returns: A new `Match` instance with the adjusted range or ranges.
 		public func adjustingRanges(offset: Int) -> Self {
 			return Self(textCheckingResult: textCheckingResult.adjustingRanges(offset: offset), in: _string)
 		}
