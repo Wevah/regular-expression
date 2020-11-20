@@ -2,7 +2,7 @@
 
 A Swifty overlay of `NSRegularExpression`.
 
-Conforms to `CustomStringConvertable` and `Codable`, and supports pattern matching.
+Conforms to `ExpressibleByStringLiteral` and `Codable`, and supports pattern matching.
 
 Most methods are similar to the Objective-C versions, with the following changes:
 
