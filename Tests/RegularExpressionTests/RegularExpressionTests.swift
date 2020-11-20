@@ -72,15 +72,6 @@ final class RegularExpressionTests: XCTestCase {
 		XCTAssertEqual(match["last"], "Appleseed")
 	}
 
-	func testLazyIterator() throws {
-		let regex: RegularExpression = "t+o+"
-		let string = "hotottotoh"
-
-		for match in regex.lazyMatches(in: string) {
-			print(match)
-		}
-	}
-
 	func testReplacement() throws {
 		let regex: RegularExpression = "oo"
 		let string = "foobar"
