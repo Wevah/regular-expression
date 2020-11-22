@@ -152,6 +152,11 @@ public struct RegularExpression: Hashable {
 			return textCheckingResult.numberOfRanges
 		}
 
+		@available(*, unavailable, message: "Use rangeCount instead.")
+		public var numberOfRanges: Int {
+			return 0
+		}
+
 		/// The range at the specified index. The range at index `0` is always equal to `range`.
 		/// Additional ranges, if any, will have indexes from `1` to `rangeCount - 1`.
 		public func range(at index: Int) -> Range<String.Index> {
@@ -213,6 +218,11 @@ public struct RegularExpression: Hashable {
 	/// The number of capture groups.
 	public var captureGroupCount: Int {
 		return nsRegularExpression.numberOfCaptureGroups
+	}
+
+	@available(*, unavailable, message: "Use captureGroupCount instead.")
+	public var numberOfCaptureGroups: Int {
+		return 0
 	}
 
 	/// Initialize a regular expression with the specified pattern and options.
